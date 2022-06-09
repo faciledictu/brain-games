@@ -1,5 +1,3 @@
 import readlineSync from 'readline-sync';
 
-export default (message) => {
-  return readlineSync.question(message + ' ');
-}
+export default (message) => readlineSync.question(`${message} `);
