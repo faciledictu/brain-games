@@ -3,3 +3,6 @@
 
 ### Code Climate
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d9a59dba2e77295783e/maintainability)](https://codeclimate.com/github/faciledictu/frontend-project-lvl1/maintainability)
+
+### Installation
+[![asciicast](https://asciinema.org/a/500856.svg)](https://asciinema.org/a/500856)
