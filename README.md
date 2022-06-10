@@ -6,3 +6,6 @@
 
 ### Installation
 [![asciicast](https://asciinema.org/a/500856.svg)](https://asciinema.org/a/500856)
+
+### Playing Even game
+[![asciicast](https://asciinema.org/a/500864.svg)](https://asciinema.org/a/500864)
