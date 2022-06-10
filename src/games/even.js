@@ -1,5 +1,5 @@
-import getRndInt from './getRndInt.js';
-import msg from './msg.js';
+import getRndInt from '../utilities/getRndInt.js';
+import msg from '../messages.js';
 
 export default () => {
   const num = getRndInt();

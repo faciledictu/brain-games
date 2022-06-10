@@ -1,5 +1,6 @@
-import even from './even.js';
+import even from '../games/even.js';
 
+// Call specific game logic and return array with question and answer
 export default (gameName) => {
   switch (gameName) {
     case 'even':

@@ -18,8 +18,8 @@ export default {
   answerPrompt: 'Your Answer:',
   question: 'Question',
   correct: 'Correct!',
-  wrongAnswer: 'is wrong answer ;(', // text adds AFTER showing user's answer
-  correctAnswerWas: 'Correct answer was', // text adds BEFORE showing correct answer
+  wrongAnswer: 'is wrong answer ;(', // This text adds AFTER showing user's answer
+  correctAnswerWas: 'Correct answer was', // This text adds BEFORE showing correct answer
   yes: 'yes',
   no: 'no',
 
