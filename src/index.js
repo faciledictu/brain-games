@@ -1,19 +1,19 @@
-import cli from './utilities/cli.js';
-import getGameData from './utilities/getGameData.js';
+import cli from './cli.js';
 import msg from './messages.js';
+import input from './utilities/input.js';
 
 // This is common logic of Brain Games
-const playGame = (gameName, roundCount = 3) => {
-  const instruction = msg.instruction[gameName];
+const playGame = (instruction, getGameData) => {
+  const roundCount = 3;
   console.log(instruction);
 
   for (let i = 1; i <= roundCount; i += 1) {
     // Get question and correct answer for each round
-    const [question, expectedAnswer] = getGameData(gameName);
+    const [question, expectedAnswer] = getGameData();
     console.log(`${msg.question}: ${question}`);
 
     // Get a player response
-    const playerAnswer = cli(msg.answerPrompt);
+    const playerAnswer = input(msg.answerPrompt);
     if (playerAnswer === expectedAnswer) {
       console.log(`${msg.correct}`);
     } else {
@@ -27,21 +27,13 @@ const playGame = (gameName, roundCount = 3) => {
   return true;
 };
 
-// This is the entry point. It has common logic of greetings,
-// calling game and showing result
-const play = (gameName) => {
-  console.log(msg.startupGreeting);
+// Play game and show result
+export default (instruction, getGameData) => {
+  // Greet the player and recieve the name
+  const playerName = cli();
 
-  const playerName = cli(msg.playerNamePrompt);
-  console.log(`${msg.playerGreeting}, ${playerName}!`);
+  const playerIsWinner = playGame(instruction, getGameData);
 
-  // If fucntion call has game indentifier, it starts game
-  if (gameName) {
-    const playerIsWinner = playGame(gameName);
-
-    const farewellMsg = playerIsWinner ? msg.congrats : msg.tryAgain;
-    console.log(`${farewellMsg}, ${playerName}!`);
-  }
+  const farewellMsg = playerIsWinner ? msg.congrats : msg.tryAgain;
+  console.log(`${farewellMsg}, ${playerName}!`);
 };
-
-export default play;

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import play from '../src/index.js';
+import cli from '../src/cli.js';
 
-play();
+cli();
