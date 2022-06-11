@@ -12,6 +12,7 @@ export default {
     // Show game rules. Key names in this section must be
     // similar to values used in getGameData.js
     even: 'Answer "yes" if the number is even, otherwise answer "no".',
+    calc: 'What is the result of the expression?',
   },
 
   // Common phrases

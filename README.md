@@ -9,3 +9,6 @@
 
 ### Playing Even game
 [![asciicast](https://asciinema.org/a/500864.svg)](https://asciinema.org/a/500864)
+
+### Playing Calc game
+[![asciicast](https://asciinema.org/a/501039.svg)](https://asciinema.org/a/501039)
