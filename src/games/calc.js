@@ -6,9 +6,9 @@ import getLimit from '../utilities/getLimit.js';
 
 export default () => {
   const getGameData = () => {
-    // Preffered arithmetic signs, but tests require standard
+    // Preffered arithmetic signs, but tests require only + - *
     // const operators = ['+', '-', '×', '÷'];
-    const operators = ['+', '-', '*', '/'];
+    const operators = ['+', '-', '*'];
     const operator = getRndElem(operators);
 
     // Get limitations
@@ -36,11 +36,11 @@ export default () => {
         num2 = getRndInt(2, multipicand);
         result = num1 * num2;
         break;
-      case '/':
-        num2 = getRndInt(2, multipicand);
-        result = getRndInt(2, limit / 10);
-        num1 = result * num2;
-        break;
+      // case '÷':
+      //   num2 = getRndInt(2, multipicand);
+      //   result = getRndInt(2, limit / 10);
+      //   num1 = result * num2;
+      //   break;
       default:
         break;
     }
