@@ -4,8 +4,6 @@ import getRndInt from '../utilities/getRndInt.js';
 import msg from '../messages.js';
 
 export default () => {
-  const instruction = msg.instruction.calc;
-
   const getGameData = () => {
     const operators = ['+', '-', '×', '÷'];
     const operator = getRndElem(operators);
@@ -44,5 +42,5 @@ export default () => {
     return [expr, String(result)];
   };
 
-  play(instruction, getGameData);
+  play(msg.instruction.calc, getGameData);
 };
