@@ -4,26 +4,50 @@
 ### Code Climate
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d9a59dba2e77295783e/maintainability)](https://codeclimate.com/github/faciledictu/frontend-project-lvl1/maintainability)
 
-### Installation
+# Installation
+Clone repository and instal dependesies
+```
+git clone git@github.com:faciledictu/frontend-project-lvl1.git
+
+cd frontend-project-lvl1.git
+
+make install
+```
+
+You can also run Brain Games from a shell like other programs. This command will create symlinks to bins in the global bin folder
+```
+make link
+```
+
 [![asciicast](https://asciinema.org/a/500856.svg)](https://asciinema.org/a/500856)
 
-### Playing Even game
+# Usage
+
+To start playing use
+```
+make <game-name>
+```
+If you have created link via `make link`, just run game from shell by its name
+```
+<game-name>
+```
+
+### brain-even
 [![asciicast](https://asciinema.org/a/500864.svg)](https://asciinema.org/a/500864)
 
-### Playing Calc game
+### brain-calc
 [![asciicast](https://asciinema.org/a/501039.svg)](https://asciinema.org/a/501039)
 
-### Playing GCD game
+### brain-gcd
 [![asciicast](https://asciinema.org/a/501121.svg)](https://asciinema.org/a/501121)
 
-### Playing Progression game
+### brain-progression
 [![asciicast](https://asciinema.org/a/501139.svg)](https://asciinema.org/a/501139)
 
-### Playing Prime game
+### brain-prime
 [![asciicast](https://asciinema.org/a/501151.svg)](https://asciinema.org/a/501151)
 
-### Settings
+# Settings
 You can adjust difficulty level and change number of rounds by editing `settings.js`.
 
-### Localization
-You can change the displayed messages by editing `messages.js`.
+Edit `messages.js` to change displayed messages.
