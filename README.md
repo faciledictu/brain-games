@@ -18,3 +18,6 @@
 
 ### Playing Progression game
 [![asciicast](https://asciinema.org/a/501139.svg)](https://asciinema.org/a/501139)
+
+### Playing Prime game
+[![asciicast](https://asciinema.org/a/501151.svg)](https://asciinema.org/a/501151)
