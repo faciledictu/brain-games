@@ -2,13 +2,17 @@ import play from '../index.js';
 import getRndElem from '../utilities/getRndElem.js';
 import getRndInt from '../utilities/getRndInt.js';
 import msg from '../messages.js';
+import getLimit from '../utilities/getLimit.js';
 
 export default () => {
   const getGameData = () => {
     const operators = ['+', '-', '×', '÷'];
     const operator = getRndElem(operators);
 
-    const limit = 100;
+    // Get limitations
+    const limit = getLimit();
+    const multiplier = getLimit('multiplier');
+    const multipicand = getLimit('multipicand');
 
     let num1;
     let num2;
@@ -26,19 +30,20 @@ export default () => {
         result = num1 - num2;
         break;
       case '×':
-        num2 = getRndInt(2, 9);
-        num1 = getRndInt(1, (limit * 2) / num2);
+        num1 = getRndInt(1, multiplier);
+        num2 = getRndInt(2, multipicand);
         result = num1 * num2;
         break;
       case '÷':
-        num2 = getRndInt(2, 9);
-        num1 = getRndInt(1, limit / num2) * num2;
-        result = num1 / num2;
+        num2 = getRndInt(2, multipicand);
+        result = getRndInt(2, limit / 10);
+        num1 = result * num2;
         break;
       default:
         break;
     }
     const expr = `${num1} ${operator} ${num2}`;
+
     return [expr, result];
   };
 

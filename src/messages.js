@@ -2,15 +2,14 @@ export default {
   // Show startup message
   startupGreeting: 'Welcome to the Brain Games!',
 
-  // Ask player Name
+  // Ask player name
   playerNamePrompt: 'May I have your name?',
 
   // Greet player
   playerGreeting: 'Hello',
 
   instruction: {
-    // Show game rules. Key names in this section must be
-    // similar to values used in getGameData.js
+    // Show game rules
     even: 'Answer "yes" if the number is even, otherwise answer "no".',
     calc: 'What is the result of the expression?',
     gcd: 'Find the greatest common divisor of given numbers.',

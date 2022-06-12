@@ -1,10 +1,12 @@
 import cli from './cli.js';
 import msg from './messages.js';
+import settings from './settings.js';
 import input from './utilities/input.js';
 
 // This is common logic of Brain Games
 const playGame = (instruction, getGameData) => {
-  const roundCount = 3;
+  const roundCount = settings.roundCount > 0 ? settings.roundCount : 3;
+
   console.log(instruction);
 
   for (let i = 1; i <= roundCount; i += 1) {

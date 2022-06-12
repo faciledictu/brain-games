@@ -21,3 +21,9 @@
 
 ### Playing Prime game
 [![asciicast](https://asciinema.org/a/501151.svg)](https://asciinema.org/a/501151)
+
+### Settings
+You can adjust difficulty level and change number of rounds by editing `settings.js`.
+
+### Localization
+You can change the displayed messages by editing `messages.js`.

@@ -1,14 +1,13 @@
 import play from '../index.js';
 import getRndInt from '../utilities/getRndInt.js';
 import msg from '../messages.js';
+import getLimit from '../utilities/getLimit.js';
 
 export default () => {
   const getGameData = () => {
-    const maxDiff = 10;
-
     const progrLength = getRndInt(5, 10);
-    const progrDiff = getRndInt(1, maxDiff);
-    const progrStart = getRndInt(1, 100 - progrDiff * (progrLength - 1));
+    const progrDiff = getRndInt(1, getLimit('multipicand'));
+    const progrStart = getRndInt(1, getLimit() - progrDiff * (progrLength - 1));
 
     const progrNumbers = [];
     for (let i = 0; i < progrLength; i += 1) {
