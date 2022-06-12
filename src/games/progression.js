@@ -22,5 +22,5 @@ export default () => {
     return [progrNumbers.join(' '), answer];
   };
 
-  play(msg.instruction.gcd, getGameData);
+  play(msg.instruction.progression, getGameData);
 };
