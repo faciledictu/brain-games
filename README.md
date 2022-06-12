@@ -15,3 +15,6 @@
 
 ### Playing GCD game
 [![asciicast](https://asciinema.org/a/501121.svg)](https://asciinema.org/a/501121)
+
+### Playing Progression game
+[![asciicast](https://asciinema.org/a/501139.svg)](https://asciinema.org/a/501139)
