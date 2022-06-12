@@ -10,7 +10,7 @@ export default () => {
     const pair = `${num1} ${num2}`;
     const answer = getGcd(num1, num2);
 
-    return [pair, String(answer)];
+    return [pair, answer];
   };
 
   play(msg.instruction.gcd, getGameData);

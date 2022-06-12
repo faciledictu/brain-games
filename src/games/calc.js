@@ -39,7 +39,7 @@ export default () => {
         break;
     }
     const expr = `${num1} ${operator} ${num2}`;
-    return [expr, String(result)];
+    return [expr, result];
   };
 
   play(msg.instruction.calc, getGameData);

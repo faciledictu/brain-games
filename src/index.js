@@ -14,7 +14,7 @@ const playGame = (instruction, getGameData) => {
 
     // Get a player response
     const playerAnswer = input(msg.answerPrompt);
-    if (playerAnswer === expectedAnswer) {
+    if (playerAnswer === String(expectedAnswer)) {
       console.log(`${msg.correct}`);
     } else {
       console.log(`'${playerAnswer}' ${msg.wrongAnswer}. ${msg.correctAnswerWas} '${expectedAnswer}'`);
