@@ -1,8 +1,6 @@
 import play from '../index.js';
-import getRndElem from '../utilities/getRndElem.js';
-import getRndInt from '../utilities/getRndInt.js';
+import { getLimit, getRndInt, getRndElem } from '../utilities/calculations.js';
 import msg from '../messages.js';
-import getLimit from '../utilities/getLimit.js';
 
 export default () => {
   const getGameData = () => {

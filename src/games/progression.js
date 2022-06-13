@@ -1,24 +1,24 @@
 import play from '../index.js';
-import getRndInt from '../utilities/getRndInt.js';
+import { getLimit, getRndInt } from '../utilities/calculations.js';
 import msg from '../messages.js';
-import getLimit from '../utilities/getLimit.js';
 
 export default () => {
   const getGameData = () => {
-    const progrLength = getRndInt(5, 10);
-    const progrDiff = getRndInt(1, getLimit('multipicand'));
-    const progrStart = getRndInt(1, getLimit() - progrDiff * (progrLength - 1));
+    const progressionLength = getRndInt(5, 10);
+    const progressionDifference = getRndInt(1, getLimit('multipicand'));
+    const progressionEnd = getLimit() - progressionDifference * (progressionLength - 1);
+    const progressionStart = getRndInt(1, progressionEnd);
 
-    const progrNumbers = [];
-    for (let i = 0; i < progrLength; i += 1) {
-      progrNumbers.push(progrStart + progrDiff * i);
+    const progressionNumbers = [];
+    for (let i = 0; i < progressionLength; i += 1) {
+      progressionNumbers.push(progressionStart + progressionDifference * i);
     }
 
-    const posOfHiddenNum = getRndInt(0, progrLength - 1);
-    const answer = progrNumbers[posOfHiddenNum];
-    progrNumbers[posOfHiddenNum] = '..';
+    const posOfHiddenNum = getRndInt(0, progressionLength - 1);
+    const answer = progressionNumbers[posOfHiddenNum];
+    progressionNumbers[posOfHiddenNum] = '..';
 
-    return [progrNumbers.join(' '), answer];
+    return [progressionNumbers.join(' '), answer];
   };
 
   play(msg.instruction.progression, getGameData);

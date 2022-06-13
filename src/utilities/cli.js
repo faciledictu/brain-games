@@ -1,5 +1,7 @@
-import input from './utilities/input.js';
-import msg from './messages.js';
+import readlineSync from 'readline-sync';
+import msg from '../messages.js';
+
+export const input = (message) => readlineSync.question(`${message} `);
 
 export default () => {
   console.log(msg.startupGreeting);
