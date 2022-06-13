@@ -5,7 +5,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d9a59dba2e77295783e/maintainability)](https://codeclimate.com/github/faciledictu/frontend-project-lvl1/maintainability)
 
 # Installation
-Clone repository and instal dependesies
+Cloning storage and installing dependencies
 ```
 git clone git@github.com:faciledictu/frontend-project-lvl1.git
 
@@ -14,7 +14,7 @@ cd frontend-project-lvl1.git
 make install
 ```
 
-You can also run Brain Games from a shell like other programs. This command will create symlinks to bins in the global bin folder
+You can also run Brain Games from the shell like other programs. This command will create symlinks to bins in the global bin folder
 ```
 make link
 ```
@@ -27,7 +27,7 @@ To start playing use
 ```
 make <game-name>
 ```
-If you have created link via `make link`, just run game from shell by its name
+If you have created link via `make link`, just run a game by its name
 ```
 <game-name>
 ```
