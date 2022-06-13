@@ -5,5 +5,5 @@ export default (num) => {
     }
   }
 
-  return (num > 1) && true;
+  return (num > 1);
 };
