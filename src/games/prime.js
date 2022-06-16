@@ -1,13 +1,13 @@
 import play from '../index.js';
 import { getLimit, getRndInt, isPrime } from '../utilities/calculations.js';
-import msg from '../messages.js';
+import instructions from '../instructions.js';
 
 export default () => {
   const getGameData = () => {
     const num = getRndInt(1, getLimit());
-    const answer = isPrime(num) ? msg.yes : msg.no;
+    const answer = isPrime(num) ? 'yes' : 'no';
     return [num, answer];
   };
 
-  play(msg.instruction.prime, getGameData);
+  play(instructions.prime, getGameData);
 };

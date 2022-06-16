@@ -1,5 +1,4 @@
 import cli, { input } from './utilities/cli.js';
-import msg from './messages.js';
 import settings from './settings.js';
 
 // This is common logic of Brain Games
@@ -10,13 +9,13 @@ const playGame = (instruction, getGameData) => {
 
   for (let i = 1; i <= roundCount; i += 1) {
     const [question, expectedAnswer] = getGameData();
-    console.log(`${msg.question}: ${question}`);
+    console.log(`Question: ${question}`);
 
-    const playerAnswer = input(msg.answerPrompt);
+    const playerAnswer = input('Your Answer:');
     if (playerAnswer === String(expectedAnswer)) {
-      console.log(`${msg.correct}`);
+      console.log('Correct!');
     } else {
-      console.log(`'${playerAnswer}' ${msg.wrongAnswer}. ${msg.correctAnswerWas} '${expectedAnswer}'`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}.'`);
       return false;
     }
   }
@@ -31,6 +30,6 @@ export default (instruction, getGameData) => {
 
   const playerIsWinner = playGame(instruction, getGameData);
 
-  const farewellMsg = playerIsWinner ? msg.congrats : msg.tryAgain;
+  const farewellMsg = playerIsWinner ? 'Congratulations' : 'Let\'s try again';
   console.log(`${farewellMsg}, ${playerName}!`);
 };

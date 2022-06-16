@@ -1,6 +1,6 @@
 import play from '../index.js';
 import { getLimit, getRndInt, getGcd } from '../utilities/calculations.js';
-import msg from '../messages.js';
+import instructions from '../instructions.js';
 
 export default () => {
   const getGameData = () => {
@@ -14,5 +14,5 @@ export default () => {
     return [pair, answer];
   };
 
-  play(msg.instruction.gcd, getGameData);
+  play(instructions.gcd, getGameData);
 };
