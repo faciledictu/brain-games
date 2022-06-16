@@ -5,34 +5,34 @@ import instructions from '../instructions.js';
 export default () => {
   const generateQuestionAndAnswer = () => {
     const getNumbers = (operator) => {
-      const firstNumber = getRandomInt(1, maxValue);
+      const number1 = getRandomInt(1, maxValue);
 
       if (operator === '*') {
         const factor = getRandomInt(1, maxFactor);
-        return [firstNumber, factor];
+        return [number1, factor];
       }
 
-      const secondNumber = getRandomInt(1, maxValue);
-      return [firstNumber, secondNumber];
+      const number2 = getRandomInt(1, maxValue);
+      return [number1, number2];
     };
 
-    const calculate = (firstNumber, secondNumber, operator) => {
+    const calculate = (number1, number2, operator) => {
       switch (operator) {
         case '+':
-          return firstNumber + secondNumber;
+          return number1 + number2;
         case '-':
-          return firstNumber - secondNumber;
+          return number1 - number2;
         case '*':
-          return firstNumber * secondNumber;
+          return number1 * number2;
         default:
           throw new Error(`Can't calculate. Unknown operator: '${operator}'!`);
       }
     };
 
     const operator = ['+', '-', '*'][getRandomInt(0, 2)];
-    const [firstNumber, secondNumber] = getNumbers(operator);
-    const expression = `${firstNumber} ${operator} ${secondNumber}`;
-    const result = calculate(firstNumber, secondNumber, operator);
+    const [number1, number2] = getNumbers(operator);
+    const expression = `${number1} ${operator} ${number2}`;
+    const result = calculate(number1, number2, operator);
 
     return [expression, result];
   };
