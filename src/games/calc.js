@@ -1,37 +1,37 @@
 import play from '../index.js';
-import { getLimit, getRndInt, getRndElem } from '../utilities/calculations.js';
+import { maxValue, maxFactor, getRandomInt } from '../utilities/calculations.js';
 import instructions from '../instructions.js';
 
 export default () => {
-  const getGameData = () => {
-    const getExpressionParams = (operator) => {
-      const term1 = getRndInt(1, getLimit());
-      const term2 = getRndInt(1, getLimit());
-      const multiplier = getRndInt(1, getLimit('multiplier'));
-      const multipicand = getRndInt(2, getLimit('multipicand'));
+  const generateQuestionAndAnswer = () => {
+    const getNumbers = (operator) => {
+      if (operator === '*') {
+        return [getRandomInt(1, maxValue), getRandomInt(1, maxFactor)];
+      }
 
+      return [getRandomInt(1, maxValue), getRandomInt(1, maxValue)];
+    };
+
+    const calculate = (firstNumber, secondNumber, operator) => {
       switch (operator) {
         case '+':
-          return [term1, term2, term1 + term2];
-
+          return firstNumber + secondNumber;
         case '-':
-          return [term1, term2, term1 - term2];
-
+          return firstNumber - secondNumber;
         case '*':
-          return [multiplier, multipicand, multiplier * multipicand];
-
+          return firstNumber * secondNumber;
         default:
-          throw new Error(`Unknown operator: '${operator}'!`);
+          throw new Error(`Can't calculate. Unknown operator: '${operator}'!`);
       }
     };
 
-    const operators = ['+', '-', '*'];
-    const operator = getRndElem(operators);
-    const [num1, num2, result] = getExpressionParams(operator);
-    const expression = `${num1} ${operator} ${num2}`;
+    const operator = ['+', '-', '*'][getRandomInt(0, 2)];
+    const [firstNumber, secondNumber] = getNumbers(operator);
+    const expression = `${firstNumber} ${operator} ${secondNumber}`;
+    const result = calculate(firstNumber, secondNumber, operator);
 
     return [expression, result];
   };
 
-  play(instructions.calc, getGameData);
+  play(instructions.calc, generateQuestionAndAnswer);
 };

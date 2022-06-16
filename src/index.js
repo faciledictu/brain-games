@@ -1,21 +1,20 @@
-import cli, { input } from './utilities/cli.js';
-import settings from './settings.js';
+import readlineSync from 'readline-sync';
+import cli from './utilities/cli.js';
 
-// This is common logic of Brain Games
-const playGame = (instruction, getGameData) => {
-  const roundCount = settings.roundCount > 0 ? settings.roundCount : 3;
+const playGame = (instruction, generateQuestionAndAnswer) => {
+  const numberOfRounds = 3;
 
   console.log(instruction);
 
-  for (let i = 1; i <= roundCount; i += 1) {
-    const [question, expectedAnswer] = getGameData();
+  for (let i = 1; i <= numberOfRounds; i += 1) {
+    const [question, expectedAnswer] = generateQuestionAndAnswer();
     console.log(`Question: ${question}`);
 
-    const playerAnswer = input('Your Answer:');
+    const playerAnswer = readlineSync.question('Your Answer: ');
     if (playerAnswer === String(expectedAnswer)) {
       console.log('Correct!');
     } else {
-      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}.'`);
+      console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
       return false;
     }
   }
@@ -24,12 +23,11 @@ const playGame = (instruction, getGameData) => {
   return true;
 };
 
-// Play game and show result
-export default (instruction, getGameData) => {
+export default (instruction, generateQuestionAndAnswer) => {
   const playerName = cli();
 
-  const playerIsWinner = playGame(instruction, getGameData);
+  const isPlayerWinner = playGame(instruction, generateQuestionAndAnswer);
 
-  const farewellMsg = playerIsWinner ? 'Congratulations' : 'Let\'s try again';
-  console.log(`${farewellMsg}, ${playerName}!`);
+  const farewellMessage = isPlayerWinner ? 'Congratulations' : 'Let\'s try again';
+  console.log(`${farewellMessage}, ${playerName}!`);
 };
