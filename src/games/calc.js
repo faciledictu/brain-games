@@ -5,11 +5,15 @@ import instructions from '../instructions.js';
 export default () => {
   const generateQuestionAndAnswer = () => {
     const getNumbers = (operator) => {
+      const firstNumber = getRandomInt(1, maxValue);
+
       if (operator === '*') {
-        return [getRandomInt(1, maxValue), getRandomInt(1, maxFactor)];
+        const factor = getRandomInt(1, maxFactor);
+        return [firstNumber, factor];
       }
 
-      return [getRandomInt(1, maxValue), getRandomInt(1, maxValue)];
+      const secondNumber = getRandomInt(1, maxValue);
+      return [firstNumber, secondNumber];
     };
 
     const calculate = (firstNumber, secondNumber, operator) => {
