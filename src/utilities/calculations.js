@@ -1,6 +1,3 @@
-export const maxValue = 100;
-export const maxFactor = 10;
-
 export const getRandomInt = (begin, end) => {
   const range = (end - begin) + 1;
   return Math.floor((Math.random() * range) + begin);

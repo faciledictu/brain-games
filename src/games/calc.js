@@ -1,18 +1,18 @@
 import play from '../index.js';
-import { maxValue, maxFactor, getRandomInt } from '../utilities/calculations.js';
-import instructions from '../instructions.js';
+import { getRandomInt } from '../utilities/calculations.js';
+import { instructions, limits } from '../properties.js';
 
 export default () => {
   const generateQuestionAndAnswer = () => {
     const getNumbers = (operator) => {
-      const number1 = getRandomInt(1, maxValue);
+      const number1 = getRandomInt(1, limits.maxValue);
 
       if (operator === '*') {
-        const factor = getRandomInt(1, maxFactor);
+        const factor = getRandomInt(1, limits.maxFactor);
         return [number1, factor];
       }
 
-      const number2 = getRandomInt(1, maxValue);
+      const number2 = getRandomInt(1, limits.maxValue);
       return [number1, number2];
     };
 

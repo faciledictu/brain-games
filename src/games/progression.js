@@ -1,12 +1,12 @@
 import play from '../index.js';
-import { maxValue, maxFactor, getRandomInt } from '../utilities/calculations.js';
-import instructions from '../instructions.js';
+import { getRandomInt } from '../utilities/calculations.js';
+import { instructions, limits } from '../properties.js';
 
 export default () => {
   const generateQuestionAndAnswer = () => {
     const progressionLength = getRandomInt(5, 10);
-    const progressionDifference = getRandomInt(1, maxFactor);
-    const progressionEnd = maxValue - progressionDifference * (progressionLength - 1);
+    const progressionDifference = getRandomInt(1, limits.maxFactor);
+    const progressionEnd = limits.maxValue - progressionDifference * (progressionLength - 1);
     const progressionStart = getRandomInt(1, progressionEnd);
 
     const progressionNumbers = [];
@@ -14,9 +14,9 @@ export default () => {
       progressionNumbers.push(progressionStart + progressionDifference * i);
     }
 
-    const posOfHiddenNum = getRandomInt(0, progressionLength - 1);
-    const answer = progressionNumbers[posOfHiddenNum];
-    progressionNumbers[posOfHiddenNum] = '..';
+    const indexToHide = getRandomInt(0, progressionLength - 1);
+    const answer = progressionNumbers[indexToHide];
+    progressionNumbers[indexToHide] = '..';
 
     return [progressionNumbers.join(' '), answer];
   };
