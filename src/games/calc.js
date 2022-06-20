@@ -1,5 +1,5 @@
 import play from '../index.js';
-import { getRandomInt } from '../utilities/calculations.js';
+import { getRandomInt } from '../utils.js';
 import { instructions, limits } from '../properties.js';
 
 const getNumbers = (operator) => {

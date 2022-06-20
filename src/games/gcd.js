@@ -1,5 +1,5 @@
 import play from '../index.js';
-import { getRandomInt, getGcd } from '../utilities/calculations.js';
+import { getRandomInt, getGcd } from '../utils.js';
 import { instructions, limits } from '../properties.js';
 
 export default () => {

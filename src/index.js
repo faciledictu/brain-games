@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import cli from './utilities/cli.js';
+import cli from './cli.js';
 
 export default (instruction, generateQuestionAndAnswer) => {
   const playerName = cli();
