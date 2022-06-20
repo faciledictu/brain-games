@@ -3,9 +3,9 @@ export const getRandomInt = (begin, end) => {
   return Math.floor((Math.random() * range) + begin);
 };
 
-export const getGcd = (firstNumber, secondNumber) => {
-  const higherNumber = Math.max(firstNumber, secondNumber);
-  const lowerNumber = Math.min(firstNumber, secondNumber);
+export const getGcd = (number1, number2) => {
+  const higherNumber = Math.max(number1, number2);
+  const lowerNumber = Math.min(number1, number2);
 
   for (let i = lowerNumber; i > 1; i -= 1) {
     if (higherNumber % i === 0 && lowerNumber % i === 0) {
@@ -25,3 +25,5 @@ export const isPrime = (number) => {
 
   return number > 1;
 };
+
+export const isEven = (number) => number % 2 === 0;
