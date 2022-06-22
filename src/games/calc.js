@@ -1,16 +1,16 @@
 import play from '../index.js';
-import { getRandomInt } from '../utils.js';
-import { instructions, limits } from '../properties.js';
+import { getRandomNumber } from '../utils.js';
+import { limits } from '../game_constants.js';
 
 const getNumbers = (operator) => {
-  const number1 = getRandomInt(1, limits.maxValue);
+  const number1 = getRandomNumber(1, limits.maxValue);
 
   if (operator === '*') {
-    const factor = getRandomInt(1, limits.maxFactor);
+    const factor = getRandomNumber(1, limits.maxFactor);
     return [number1, factor];
   }
 
-  const number2 = getRandomInt(1, limits.maxValue);
+  const number2 = getRandomNumber(1, limits.maxValue);
   return [number1, number2];
 };
 
@@ -28,8 +28,9 @@ const calculate = (number1, number2, operator) => {
 };
 
 export default () => {
+  const instruction = 'What is the result of the expression?';
   const generateQuestionAndAnswer = () => {
-    const operator = ['+', '-', '*'][getRandomInt(0, 2)];
+    const operator = ['+', '-', '*'][getRandomNumber(0, 2)];
     const [number1, number2] = getNumbers(operator);
     const expression = `${number1} ${operator} ${number2}`;
     const result = calculate(number1, number2, operator);
@@ -37,5 +38,5 @@ export default () => {
     return [expression, result];
   };
 
-  play(instructions.calc, generateQuestionAndAnswer);
+  play(instruction, generateQuestionAndAnswer);
 };

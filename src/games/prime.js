@@ -1,13 +1,15 @@
 import play from '../index.js';
-import { getRandomInt, isPrime } from '../utils.js';
-import { instructions, limits } from '../properties.js';
+import { getRandomNumber, isPrime } from '../utils.js';
+import { limits } from '../game_constants.js';
 
 export default () => {
+  const instruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
   const generateQuestionAndAnswer = () => {
-    const num = getRandomInt(1, limits.maxValue);
-    const answer = isPrime(num) ? 'yes' : 'no';
-    return [num, answer];
+    const number = getRandomNumber(1, limits.maxValue);
+    const answer = isPrime(number) ? 'yes' : 'no';
+    return [number, answer];
   };
 
-  play(instructions.prime, generateQuestionAndAnswer);
+  play(instruction, generateQuestionAndAnswer);
 };

@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 import cli from './cli.js';
+import { roundsToWin } from './game_constants.js';
 
 export default (instruction, generateQuestionAndAnswer) => {
   const playerName = cli();
-  const numberOfRounds = 3;
 
   console.log(instruction);
 
-  for (let i = 1; i <= numberOfRounds; i += 1) {
+  for (let i = 1; i <= roundsToWin; i += 1) {
     const [question, expectedAnswer] = generateQuestionAndAnswer();
     console.log(`Question: ${question}`);
 

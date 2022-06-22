@@ -1,4 +1,4 @@
-export const getRandomInt = (begin, end) => {
+export const getRandomNumber = (begin, end) => {
   const range = (end - begin) + 1;
   return Math.floor((Math.random() * range) + begin);
 };
