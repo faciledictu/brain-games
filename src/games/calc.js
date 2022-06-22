@@ -1,5 +1,5 @@
 import play from '../index.js';
-import { getRandomNumber } from '../utils.js';
+import { getRandomNumber, calculate } from '../utils.js';
 import { limits } from '../game_constants.js';
 
 const getNumbers = (operator) => {
@@ -12,19 +12,6 @@ const getNumbers = (operator) => {
 
   const number2 = getRandomNumber(1, limits.maxValue);
   return [number1, number2];
-};
-
-const calculate = (number1, number2, operator) => {
-  switch (operator) {
-    case '+':
-      return number1 + number2;
-    case '-':
-      return number1 - number2;
-    case '*':
-      return number1 * number2;
-    default:
-      throw new Error(`Can't calculate. Unknown operator: '${operator}'!`);
-  }
 };
 
 export default () => {
