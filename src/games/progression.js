@@ -5,7 +5,7 @@ import { limits } from '../game_constants.js';
 export default () => {
   const instruction = 'What number is missing in the progression?';
 
-  const generateQuestionAndAnswer = () => {
+  const generateRound = () => {
     const progressionLength = getRandomNumber(5, 10);
     const progressionDifference = getRandomNumber(1, limits.maxFactor);
     const progressionEnd = limits.maxValue - progressionDifference * (progressionLength - 1);
@@ -23,5 +23,5 @@ export default () => {
     return [progressionNumbers.join(' '), answer];
   };
 
-  play(instruction, generateQuestionAndAnswer);
+  play(instruction, generateRound);
 };

@@ -16,7 +16,7 @@ const getNumbers = (operator) => {
 
 export default () => {
   const instruction = 'What is the result of the expression?';
-  const generateQuestionAndAnswer = () => {
+  const generateRound = () => {
     const operator = ['+', '-', '*'][getRandomNumber(0, 2)];
     const [number1, number2] = getNumbers(operator);
     const expression = `${number1} ${operator} ${number2}`;
@@ -25,5 +25,5 @@ export default () => {
     return [expression, result];
   };
 
-  play(instruction, generateQuestionAndAnswer);
+  play(instruction, generateRound);
 };
