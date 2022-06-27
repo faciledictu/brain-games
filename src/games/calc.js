@@ -1,6 +1,6 @@
 import play from '../index.js';
 import { getRandomNumber, calculate } from '../utils.js';
-import { limits } from '../game_constants.js';
+import { limits } from '../gameConstants.js';
 
 const getNumbers = (operator) => {
   const number1 = getRandomNumber(1, limits.maxValue);

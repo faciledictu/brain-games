@@ -1,4 +1,4 @@
-import { limits } from './game_constants.js';
+import { limits } from './gameConstants.js';
 
 export const getRandomNumber = (begin, end) => {
   const range = (end - begin) + 1;

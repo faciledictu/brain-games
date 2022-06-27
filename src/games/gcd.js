@@ -1,6 +1,6 @@
 import play from '../index.js';
 import { getRandomNumber, getGcd } from '../utils.js';
-import { limits } from '../game_constants.js';
+import { limits } from '../gameConstants.js';
 
 export default () => {
   const instruction = 'Find the greatest common divisor of given numbers.';

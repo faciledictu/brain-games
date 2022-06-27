@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import cli from './cli.js';
-import { roundsToWin } from './game_constants.js';
+import { roundsToWin } from './gameConstants.js';
 
 export default (instruction, generateRound) => {
   const playerName = cli();

@@ -1,6 +1,6 @@
 import play from '../index.js';
 import { getRandomNumber } from '../utils.js';
-import { limits } from '../game_constants.js';
+import { limits } from '../gameConstants.js';
 
 export default () => {
   const instruction = 'What number is missing in the progression?';
