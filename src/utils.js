@@ -1,5 +1,3 @@
-import { limits } from './gameConstants.js';
-
 export const getRandomNumber = (begin, end) => {
   const range = (end - begin) + 1;
   return Math.floor((Math.random() * range) + begin);
@@ -43,8 +41,10 @@ export const isPrime = (number) => {
 
 export const isEven = (number) => number % 2 === 0;
 
-export const generateRoundByPredicate = (predicate) => {
-  const number = getRandomNumber(1, limits.maxValue);
-  const answer = predicate(number) ? 'yes' : 'no';
-  return [number, answer];
+export const makeProgression = (begin, difference, length) => {
+  const progressionNumbers = [];
+  for (let i = 0; i < length; i += 1) {
+    progressionNumbers.push(begin + difference * i);
+  }
+  return progressionNumbers;
 };

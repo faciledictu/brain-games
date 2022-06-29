@@ -16,14 +16,14 @@ const getNumbers = (operator) => {
 
 export default () => {
   const instruction = 'What is the result of the expression?';
-  const generateRound = () => {
+  const getQuestionAndAnswer = () => {
     const operator = ['+', '-', '*'][getRandomNumber(0, 2)];
     const [number1, number2] = getNumbers(operator);
-    const expression = `${number1} ${operator} ${number2}`;
-    const result = calculate(number1, number2, operator);
+    const question = `${number1} ${operator} ${number2}`;
+    const answer = calculate(number1, number2, operator);
 
-    return [expression, result];
+    return [question, answer];
   };
 
-  play(instruction, generateRound);
+  play(instruction, getQuestionAndAnswer);
 };
