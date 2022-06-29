@@ -5,7 +5,7 @@ import { limits } from '../gameConstants.js';
 export default () => {
   const instruction = 'Find the greatest common divisor of given numbers.';
 
-  const generateRound = () => {
+  const getQuestionAndAnswer = () => {
     const number1 = getRandomNumber(1, limits.maxValue);
     const number2 = getRandomNumber(1, limits.maxValue);
     const pair = `${number1} ${number2}`;
@@ -14,5 +14,5 @@ export default () => {
     return [pair, answer];
   };
 
-  play(instruction, generateRound);
+  play(instruction, getQuestionAndAnswer);
 };
