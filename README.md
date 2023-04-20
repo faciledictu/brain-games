@@ -1,11 +1,13 @@
 [![Actions Status](https://github.com/faciledictu/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/faciledictu/frontend-project-lvl1/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4d9a59dba2e77295783e/maintainability)](https://codeclimate.com/github/faciledictu/frontend-project-lvl1/maintainability)
 
+#Brain Games
+
 Brain Games is a set of console games to train for practising your math skills. To win, you have to give the right answer three times.
 
 This is my very first studying project at Hexlet School.
 
-# Installation
+## Installation
 
 Cloning storage and installing dependencies
 
@@ -23,7 +25,7 @@ You can also run Brain Games from the shell like other programs. This command wi
 make link
 ```
 
-# Usage
+## Usage
 
 To start playing use
 
